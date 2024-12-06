@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .sticky-title {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            background-color: inherit;
+            z-index: 10;
+        }
+        .scrollbar {
+            overflow-y: scroll;
+        }
+        .scroll-comments {
+            max-height: 150px;
+            overflow-y: scroll;
+        }
+        .flex-auto {
+            flex: 1 1 auto;
+        }
+        /* Menyamakan ukuran sidebar */
+        aside {
+            width: 220px;
+        }
+        #sidebar {
+          transform: translateX(750%);
+          transition: transform 0.3s ease-in-out;
+        }
+
+        #sidebar.active {
+            transform: translateX(650%);
+        }
+
+        .sidebar-link:hover::after {
+            width: 100%;
+        }
+
+        .sidebar-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex flex-row">
+        <!-- First Sidebar (Top Movies) -->
+        <aside class="bg-gray-800 text-white p-4 sticky-title scrollbar rounded-lg shadow-lg mx-2 flex-none">
+            <h1 class="text-xl font-bold mb-4 text-center sticky-title text-black">Top Movies</h1>
+            <ul>
+                <li class="mb-4">
+                    <a href="#" class="block bg-gray-700 shadow rounded-lg p-2">
+                        <img src="https://img.freepik.com/premium-psd/movie-poster-design-template_841014-16988.jpg" alt="Movie Title 1" class="w-full h-48 object-fill rounded mb-2">
+                        <p class="text-center font-semibold text-sm">Movie Title 1</p>
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="block bg-gray-700 shadow rounded-lg p-2">
+                        <img src="https://img.freepik.com/premium-psd/movie-poster-design-template_841014-16988.jpg" alt="Movie Title 2" class="w-full h-48 object-fill rounded mb-2">
+                        <p class="text-center font-semibold text-sm">Movie Title 2</p>
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="block bg-gray-700 shadow rounded-lg p-2">
+                        <img src="https://img.freepik.com/premium-psd/movie-poster-design-template_841014-16988.jpg" alt="Movie Title 3" class="w-full h-48 object-fill rounded mb-2">
+                        <p class="text-center font-semibold text-sm">Movie Title 3</p>
+                    </a>
+                </li>
+                <!-- Tambahkan lebih banyak film jika diinginkan -->
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="w-full p-4">
+            <div class="mb-6 flex justify-between items-center">
+                <!-- Back Button and Search Bar -->
+                <div class="flex space-x-4 w-full">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded">Back</button>
+                    <input type="text" class="p-2 border border-gray-300 rounded w-full" placeholder="Search...">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded">Cari</button>
+                </div>
+            </div>
+
+            <!-- Movie Details -->
+            <div class="bg-white shadow-lg rounded-lg p-6 mb-6 ">
+                <div class="flex flex-col md:flex-row">
+                    <img src="https://img.freepik.com/premium-psd/movie-poster-design-template_841014-16988.jpg" alt="Film Cover" class="w-full md:w-64 h-auto rounded-md mb-4 md:mr-6">
+                    <div>
+                        <h1 class="text-3xl font-bold mb-4">Film Title</h1>
+                        <p class="text-gray-700 mb-4">This is the synopsis of the movie. It provides a brief overview of the plot and key elements of the story.</p>
+                        <ul class="list-disc pl-5">
+                            <li><strong>Release Date:</strong> January 1, 2022</li>
+                            <li><strong>Director:</strong> John Doe</li>
+                            <li><strong>Cast:</strong> Jane Doe, John Smith, Mary Johnson</li>
+                            <li><strong>Genre:</strong> Action, Adventure</li>
+                            <li><strong>Rating:</strong> PG-13</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actors List -->
+            <div class="bg-white text-white p-4 rounded-lg shadow-lg w-full mb-6">
+                <h1 class="font-bold mb-4 text-black text-2xl font-bold">Actors</h1>
+                <div class="overflow-x-auto">
+                    <ul class="flex flex-nowrap">
+                        <li class="mr-4 flex-none">
+                            <a href="#" class="block bg-gray-700 shadow rounded-lg p-2">
+                                <img src="https://img.freepik.com/premium-psd/movie-poster-design-template_841014-16988.jpg" alt="Actor 1" class="w-48 h-72 object-cover rounded mb-2">
+                                <p class="text-center font-semibold text-sm">Actor 1</p>
+                            </a>
+                        </li>
+                        <li class="mr-4 flex-none">
+                            <a href="#" class="block bg-gray-700 shadow rounded-lg p-2">
+                                <img src="https://img.freepik.com/premium-psd/movie-poster-design-template_841014-16988.jpg" alt="Actor 2" class="w-48 h-72 object-cover rounded mb-2">
+                                <p class="text-center font-semibold text-sm">Actor 2</p>
+                            </a>
+                        </li>
+                        <li class="mr-4 flex-none">
+                            <a href="#" class="block bg-gray-700 shadow rounded-lg p-2">
+                                <img src="https://img.freepik.com/premium-psd/movie-poster-design-template_841014-16988.jpg" alt="Actor 3" class="w-48 h-72 object-cover rounded mb-2">
+                                <p class="text-center font-semibold text-sm">Actor 3</p>
+                            </a>
+                        </li>
+                        <li class="mr-4 flex-none">
+                            <a href="#" class="block bg-gray-700 shadow rounded-lg p-2">
+                                <img src="https://img.freepik.com/premium-psd/movie-poster-design-template_841014-16988.jpg" alt="Actor 3" class="w-48 h-72 object-cover rounded mb-2">
+                                <p class="text-center font-semibold text-sm">Actor 3</p>
+                            </a>
+                        </li>
+                        
+                        <!-- Add more movies as desired -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Reactions and Comments -->
+            <div class="bg-white shadow-lg rounded-lg p-6">
+                <div class="flex space-x-4 mb-4">
+                    <button class="bg-yellow-500 text-white px-4 py-2 rounded">😀 10</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded">😢 5</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded">😡 3</button>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded">👍 15</button>
+                    <button class="bg-purple-500 text-white px-4 py-2 rounded">👎 2</button>
+                </div>
+
+                <!-- Comment Filter -->
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <label class="mr-2">Filter by:</label>
+                        <select class="p-2 border border-gray-300 rounded">
+                            <option value="recent">Recent Comments</option>
+                            <option value="top">Top Replies</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Comments Section -->
+                <div class="scroll-comments space-y-4">
+                    <div class="bg-gray-100 p-2 rounded">
+                        <p><strong>Jane Doe:</strong> Amazing movie! Really enjoyed it.</p>
+                        <button class="text-blue-500 text-sm">Reply</button>
+                    </div>
+                    <div class="bg-gray-100 p-2 rounded">
+                        <p><strong>John Smith:</strong> The plot was a bit slow, but the acting was great.</p>
+                        <button class="text-blue-500 text-sm">Reply</button>
+                    </div>
+                    <div class="bg-gray-100 p-2 rounded">
+                        <p><strong>Mary Johnson:</strong> Loved the cinematography!</p>
+                        <button class="text-blue-500 text-sm">Reply</button>
+                    </div>
+                </div>
+
+                <!-- Add Comment -->
+                <textarea class="w-full p-2 border border-gray-300 rounded mt-4" rows="4" placeholder="Add your comment..."></textarea>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded mt-2">Submit</button>
+            </div>
+
+
+            <!-- More Movies -->           
+            <div class="bg-white text-white p-4 rounded-lg shadow-lg w-full">
+                <h1 class="text-xl font-bold mb-4 text-black">More Movies</h1>
+                <div class="overflow-x-auto">
+                    <ul class="flex flex-nowrap">
+                        <li class="mr-4 flex-none">
+                            <a href="#" class="block bg-gray-700 shadow rounded-lg p-2">
+                                <img src="https://img.freepik.com/premium-psd/movie-poster-design-template_841014-16988.jpg" alt="Movie Title 1" class="w-48 h-72 object-cover rounded mb-2">
+                                <p class="text-center font-semibold text-sm">Movie Title 1</p>
+                            </a>
+                        </li>
+                        <li class="mr-4 flex-none">
+                            <a href="#" class="block bg-gray-700 shadow rounded-lg p-2">
+                                <img src="https://img.freepik.com/premium-psd/movie-poster-design-template_841014-16988.jpg" alt="Movie Title 2" class="w-48 h-72 object-cover rounded mb-2">
+                                <p class="text-center font-semibold text-sm">Movie Title 2</p>
+                            </a>
+                        </li>
+                        <li class="mr-4 flex-none">
+                            <a href="#" class="block bg-gray-700 shadow rounded-lg p-2">
+                                <img src="https://img.freepik.com/premium-psd/movie-poster-design-template_841014-16988.jpg" alt="Movie Title 3" class="w-48 h-72 object-cover rounded mb-2">
+                                <p class="text-center font-semibold text-sm">Movie Title 3</p>
+                            </a>
+                        </li>
+                        <li class="mr-4 flex-none">
+                            <a href="#" class="block bg-gray-700 shadow rounded-lg p-2">
+                                <img src="https://img.freepik.com/premium-psd/movie-poster-design-template_841014-16988.jpg" alt="Movie Title 3" class="w-48 h-72 object-cover rounded mb-2">
+                                <p class="text-center font-semibold text-sm">Movie Title 3</p>
+                            </a>
+                        </li>
+                        
+                        <!-- Add more movies as desired -->
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <!-- Sidenav -->
+        <div class="flex z-30">
+            <div class="bg-yellow-900 bg-opacity-90 p-4 h-screen sticky top-0 ">
+                <div class="text-2xl font-bold text-white flex flex-col justify-center">
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M15.907 11.998 10.332 9.23a.9.9 0 0 1-.16-.037l-.018-.007v6.554c0 .017.008.034.01.051l2.388-2.974 3.355-.82Z"/>
+                        <path d="m11.463 4.054 5.579 3.323A4.02 4.02 0 0 1 18.525 9c.332.668.47 1.414.398 2.155a3.07 3.07 0 0 1-.745 1.65 3.108 3.108 0 0 1-1.55.951c-.022.007-.045.005-.07.01-.062.03-.126.057-.191.08l-2.72.667-1.992 2.48c-.18.227-.41.409-.67.534.047.034.085.077.137.107a2.05 2.05 0 0 0 1.995.035c.592-.33 2.15-1.201 4.636-2.892l.28-.19c1.328-.895 3.616-2.442 3.967-4.215a9.94 9.94 0 0 0-1.713-4.154 10.027 10.027 0 0 0-3.375-2.989 10.107 10.107 0 0 0-8.802-.418c1.162.287 2.287.704 3.354 1.243Z"/>
+                        <path d="M5.382 17.082v-6.457a3.7 3.7 0 0 1 .45-1.761 3.733 3.733 0 0 1 1.238-1.34 3.915 3.915 0 0 1 3.433-.245c.176.03.347.084.508.161l5.753 2.856c.082.05.161.105.236.165a2.128 2.128 0 0 0-.953-1.455l-5.51-3.284c-1.74-.857-3.906-1.523-5.244-1.097a9.96 9.96 0 0 0-2.5 3.496 9.895 9.895 0 0 0 .283 8.368 9.973 9.973 0 0 0 2.73 3.322 17.161 17.161 0 0 1-.424-2.729Z"/>
+                        <path d="m19.102 16.163-.272.183c-2.557 1.74-4.169 2.64-4.698 2.935a4.083 4.083 0 0 1-2 .53 3.946 3.946 0 0 1-1.983-.535 3.788 3.788 0 0 1-1.36-1.361 3.752 3.752 0 0 1-.51-1.85 1.812 1.812 0 0 1-.043-.26V9.143c0-.024.009-.046.01-.07-.056.02-.11.043-.162.07a1.796 1.796 0 0 0-.787 1.516v6.377a10.67 10.67 0 0 0 1.113 4.27 10.11 10.11 0 0 0 8.505-.53 10.022 10.022 0 0 0 3.282-2.858 9.936 9.936 0 0 0 1.75-3.97 19.615 19.615 0 0 1-2.845 2.216Z"/>
+                    </svg>
+                </div>
+                
+                <!-- Toggle Sidebar Button -->
+                <div class="absolute right-1/3 top-1/2">
+                    <button id="open-btn" class="text-3xl text-white">&equiv;</button>
+                </div>
+            </div>
+    
+        <!-- Sidebar Popup -->
+            <div id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-yellow-900 shadow-lg z-50 p-8">
+                <div class="flex justify-between items-center mb-12">
+                    <h2 class="text-2xl font-bold text-white">Countries</h2>
+                    <button id="close-btn" class="text-2xl text-white">&times;</button>
+                </div>
+                <nav>
+                    <ul>
+                        <li class="mb-4"><a href="#" class="sidebar-link text-lg text-white">Japan</a></li>
+                        <li class="mb-4"><a href="#" class="sidebar-link text-lg text-white">Korea</a></li>
+                        <li class="mb-4"><a href="#" class="sidebar-link text-lg text-white">China</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>  
+    </div>
+    <script>
+        const openBtn = document.getElementById('open-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const sidebar = document.getElementById('sidebar');
+
+        openBtn.addEventListener('click', () => {
+                sidebar.classList.add('active');
+            });
+
+            closeBtn.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+            });
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const items = document.querySelectorAll('[data-carousel-item]');
+                const prevButton = document.querySelector('[data-carousel-prev]');
+                const nextButton = document.querySelector('[data-carousel-next]');
+                const indicators = document.querySelectorAll('[data-carousel-slide-to]');
+                let currentIndex = 0;
+
+                function showSlide(index) {
+                    items.forEach((item, i) => {
+                        item.classList.add('hidden');
+                        indicators[i].setAttribute('aria-current', 'false');
+                    });
+                    items[index].classList.remove('hidden');
+                    indicators[index].setAttribute('aria-current', 'true');
+                }
+
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % items.length;
+                    showSlide(currentIndex);
+                }
+
+                function prevSlide() {
+                    currentIndex = (currentIndex - 1 + items.length) % items.length;
+                    showSlide(currentIndex);
+                }
+
+                prevButton.addEventListener('click', prevSlide);
+                nextButton.addEventListener('click', nextSlide);
+                indicators.forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => {
+                        currentIndex = index;
+                        showSlide(currentIndex);
+                    });
+                });
+
+                // Initialize carousel
+                showSlide(currentIndex);
+
+                // Auto-slide (optional)
+                setInterval(nextSlide, 3000); // Change slide every 3 seconds
+            });
+
+    </script>
+</body>
+<footer class="bg-white shadow dark:bg-opacity-90 dark:bg-yellow-900 p-10">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">DramaKu</span>
+            </a>
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">About</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-white lg:my-8" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">DramaKu™</a>. All Rights Reserved.</span>
+    </div>
+</footer>
+</html>
