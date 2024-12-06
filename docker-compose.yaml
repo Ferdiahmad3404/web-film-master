@@ -21,24 +21,6 @@ services:
       - "3001:3001"
     depends_on:
       - db
-    environment:
-      APP_NAME: "Laravel"
-      APP_ENV: "local"
-      APP_KEY: "base64:X/2SJc1yg8h7U4+q66LVH6CGPorx3kCaZTRk2trhePs:"
-      APP_DEBUG: "true"
-      APP_TIMEZONE: "UTC"
-      APP_URL: "http://localhost"
-      DB_CONNECTION: "pgsql"
-      DB_HOST: "db"
-      DB_PORT: "5432"
-      DB_DATABASE: "DramaKu"
-      DB_USERNAME: "postgres"
-      DB_PASSWORD: "postgres"
-      FRONTEND_URL: "http://localhost:3000"
-      GOOGLE_CLIENT_ID: "30905211574-vajgt4np8af2j5ffpv9pkpmb1ain649a.apps.googleusercontent.com"
-      GOOGLE_CLIENT_SECRET: "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"
-      GOOGLE_REDIRECT_URI: "http://localhost:3001/api/auth/google/callback"
-      JWT_SECRET: "Ta89LYDCWxC9UTLPnJN72LUUTO2noIswyxF0BzPjlypbupzJ5vAqZFvBdo59rNOF"
   db:
     container_name: dramaku_db
     image: postgres:16
